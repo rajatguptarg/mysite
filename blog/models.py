@@ -10,6 +10,12 @@ class BlogPost(models.Model):
     body = models.TextField()
     timestamp = models.DateTimeField()
 
+    class Meta:
+        """
+        Ordering according to timestamp
+         """
+        ordering = ('-timestamp',)
+
     """
     def __init__(self, title, body, timestamp):
         self.title = title
