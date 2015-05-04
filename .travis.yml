@@ -3,7 +3,11 @@ python:
     - "2.7"
 env:
     - DJANGO_VERSION=1.5.12
-# command to install
-install: "pip install -r requirements.txt"
-script: 
-    make test flake8
+install:
+    - pip install -r requirements.txt
+    - pip install -q Django==$DJANGO_VERSION
+script:
+    - flake8 .
+notifications:
+    email:
+        - rajat.gupta712@gmail.com
